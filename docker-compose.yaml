@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  ansible:
+    image: thslaurent/ansible:latest
+    working_dir: /ansible
+    tty: true
+    volumes: 
+      - type: bind
+        source: ./ansible-vol
+        target: /ansible
+    env_file:    
+      - ./.ansible.env  
